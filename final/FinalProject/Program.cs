@@ -2,11 +2,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello FinalProject World!");
         Board board = new Board();
         PlayerSetup playerSetup = new PlayerSetup();
+        RandomSetup randomSetup = new RandomSetup();
         board.display();
-        playerSetup.setup(board);
+        randomSetup.setup(board);
         board.display();
     }
 }
