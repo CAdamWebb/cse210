@@ -2,11 +2,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        Board board = new Board();
+        Board playerBoard = new Board();
+        Board cpuBoard = new Board();
         PlayerSetup playerSetup = new PlayerSetup();
         RandomSetup randomSetup = new RandomSetup();
-        board.display();
-        randomSetup.setup(board);
-        board.display();
+        playerSetup.setup(playerBoard);
+        randomSetup.setup(cpuBoard);
+        HumanPlayer player1 = new HumanPlayer(playerBoard, cpuBoard);
+        CpuPlayer player2 = new CpuPlayer(playerBoard);
+        while (! playerBoard.isDead() && ! cpuBoard.isDead())
+        {
+            player1.play();
+            player2.play();
+        }
     }
 }

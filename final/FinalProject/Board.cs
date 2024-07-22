@@ -21,4 +21,26 @@ class Board
         }
         Console.WriteLine();
     }
+    public bool isDead()
+    {
+        char[] boats = ['C', 'B', 'D', 'S', 'P'];
+        foreach (char i in _contents)
+        {
+            if (boats.Contains(i))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public bool hit(int target)
+    {
+        if (_contents[target] == '-' || _contents[target] == '*')
+        {
+            _contents[target] = '*';
+            return false;
+        }
+        _contents[target] = Char.ToLower(_contents[target]);
+        return true;
+    }
 }
