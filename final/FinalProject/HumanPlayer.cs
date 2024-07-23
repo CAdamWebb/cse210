@@ -1,5 +1,6 @@
 class HumanPlayer : Player
 {
+    private int input;
     public HumanPlayer(Board a, Board b)
     {
         _myBoard = a;
@@ -7,8 +8,21 @@ class HumanPlayer : Player
     }
     public override void play()
     {
-        _opponentBoard.display();
+        _opponentBoard.hiddenDisplay();
+        Console.WriteLine("\n");
         _myBoard.display();
-        _opponentBoard.hit(int.Parse(Console.ReadLine()));
+        input = -1;
+        while (input > 99 || input < 0)
+        {
+            input = int.Parse(Console.ReadLine());
+        }
+        if (_opponentBoard.hit(input))
+        {
+            Console.WriteLine("Hit!");
+        }
+        else
+        {
+            Console.WriteLine("Miss!");
+        }
     }
 }

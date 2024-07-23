@@ -15,5 +15,13 @@ class Program
             player1.play();
             player2.play();
         }
+        if (cpuBoard.isDead())
+        {
+            Console.WriteLine("You win!");
+        }
+        else
+        {
+            Console.WriteLine("You lose.");
+        }
     }
 }
