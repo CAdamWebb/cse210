@@ -18,7 +18,7 @@ class Board
             {
                 Console.Write(_contents[10 * i + j] + " ");
             }
-            Console.Write($"  {i}");
+            Console.Write($" {i}");
         }
         Console.WriteLine("\n   0 1 2 3 4 5 6 7 8 9");
     }
@@ -47,7 +47,7 @@ class Board
                     Console.Write(_contents[10 * i + j] + " ");
                 }
             }
-            Console.Write($"  {i}");
+            Console.Write($" {i}");
         }
         Console.WriteLine("\n   0 1 2 3 4 5 6 7 8 9");
     }
